@@ -19,8 +19,3 @@ searchBtn.addEventListener('click',(e)=>{
     fetchRecipe(searchInput);
     // console.log('clicked');
 });
-    // console.log('clicked');
-    // console.log('clicked');
-    // console.log('clicked');
-    // console.log('clicked');
-
