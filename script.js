@@ -36,4 +36,6 @@ searchBtn.addEventListener('click',(e)=>{
     const searchInput = searchBox.value.trim();
     fetchRecipe(searchInput);
     // console.log('clicked');
+    // console.log('clicked');
+    // console.log('clicked');
 });
