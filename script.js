@@ -26,14 +26,52 @@ const fetchRecipe = async (query) => {
         `
 
         // create Recipe button 
-        const botton = document.createElement('button');
-        botton.textContent = "View Recire";
-        recipeDiv.appendChild(botton);
+        const button = document.createElement('button');
+        button.textContent = "View Recire";
+        recipeDiv.appendChild(button);
+
+        button.addEventListener('click', () => {
+            openRecipePopup(meal);
+        })
 
         recipeContainer.appendChild(recipeDiv);
     })
-    
+
 }
+
+// function to fetch Ingredents
+
+const fetchIngredents = (meal) => {
+    let ingredentsList = "";
+    for (let i=1; i<=20; i++){
+        const ingredient = meal[`strIngredient${i}`];
+        if(ingredient){
+            const measure = meal[`strMeasure${i}`];
+            ingredentsList += `<li>${ingredient},${measure}</li>`
+        }else{
+            break;
+        }
+    }
+    return ingredentsList;
+}
+
+
+const openRecipePopup = (meal) => {
+    // console.log(meal);
+    recipeDetailsContents.innerHTML = `
+    <h2>${meal.strMeal}</h2>
+    <h3>Ingredents</h3>
+    <ul>${fetchIngredents(meal)}</ul>
+    <div>
+    <h3>Instructions:</h3>
+    <p>${meal.strInstructions}</p>
+    </div>
+    `
+
+    recipeDetailsContents.parentElement.style.display = "block";
+}
+
+
 
 searchBtn.addEventListener('click',(e)=>{
     e.preventDefault();
