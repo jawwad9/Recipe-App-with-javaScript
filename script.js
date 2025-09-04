@@ -1,6 +1,8 @@
 const searchBox = document.querySelector('.searchBox');
 const searchBtn = document.querySelector('.searchBtn');
 const recipeContainer = document.querySelector('.recipe-container');
+const recipeDetailsContents = document.querySelector('.recipe-details-contents')
+const recipeCloseBtn = document.querySelector('.recipe-close-btn')
 
 
 
@@ -22,6 +24,8 @@ const fetchRecipe = async (query) => {
         <p><span>${meal.strArea}</span>Dish</p>
         <p>Belong to <span>${meal.strCategory} </span>Category</p>
         `
+
+        // create Recipe button 
         const botton = document.createElement('button');
         botton.textContent = "View Recire";
         recipeDiv.appendChild(botton);
@@ -35,7 +39,5 @@ searchBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     const searchInput = searchBox.value.trim();
     fetchRecipe(searchInput);
-    // console.log('clicked');
-    // console.log('clicked');
     // console.log('clicked');
 });
