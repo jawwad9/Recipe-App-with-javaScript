@@ -59,19 +59,26 @@ const fetchIngredents = (meal) => {
 const openRecipePopup = (meal) => {
     // console.log(meal);
     recipeDetailsContents.innerHTML = `
-    <h2>${meal.strMeal}</h2>
+    <h2 class="recipeName">${meal.strMeal}</h2>
     <h3>Ingredents</h3>
-    <ul>${fetchIngredents(meal)}</ul>
+    <ulclass="ingredentsList">${fetchIngredents(meal)}</ul>
     <div>
     <h3>Instructions:</h3>
-    <p>${meal.strInstructions}</p>
+    <pclass="recipeInstructions">${meal.strInstructions}</p>
     </div>
     `
 
     recipeDetailsContents.parentElement.style.display = "block";
 }
 
+// close button view recipe popup 
 
+recipeCloseBtn.addEventListener('click', () => {
+    recipeDetailsContents.parentElement.style.display = "none";
+})
+
+
+// Search button recipe
 
 searchBtn.addEventListener('click',(e)=>{
     e.preventDefault();
