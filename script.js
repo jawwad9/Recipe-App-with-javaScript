@@ -79,6 +79,11 @@ recipeCloseBtn.addEventListener('click', () => {
 
 
 // Search button recipe
+// Search button recipe
+// Search button recipe
+// Search button recipe
+// Search button recipe
+// Search button recipe
 
 searchBtn.addEventListener('click',(e)=>{
     e.preventDefault();
